@@ -42,7 +42,7 @@ function scaler(){
     var absmult = Math.abs(parseFloat(mult.value))
 	if (parseFloat(mult.value)<0) mult.value = absmult
     var newfloat = parseFloat(oldfloat) * absmult
-    return key + newfloat
+    return key + newfloat.toFixed(10)
   });
   var adjustheight = lowestheight(datain.value) - lowestheight(result)
   result = heightlimiter(result,adjustheight)
