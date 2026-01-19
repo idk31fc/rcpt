@@ -30,7 +30,7 @@ function lowestheight(str) {
 }
 function heightlimiter(str,height) {
   return str.replace(/("y": )(-?\d+(?:\.\d+)?)/g, (match, prefix, zValue) => {
-    return `${prefix}${(parseFloat(zValue) + height)}`
+    return `${prefix}${(parseFloat(zValue) + height).toFixed(10)}`
   });
 }
 function scaler(){
@@ -42,7 +42,7 @@ function scaler(){
     var absmult = Math.abs(parseFloat(mult.value))
 	if (parseFloat(mult.value)<0) mult.value = absmult
     var newfloat = parseFloat(oldfloat) * absmult
-    return key + newfloat.toFixed(10)
+    return key + newfloat
   });
   var adjustheight = lowestheight(datain.value) - lowestheight(result)
   result = heightlimiter(result,adjustheight)
