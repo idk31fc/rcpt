@@ -1,0 +1,53 @@
+<html>
+<body bgcolor=gray style=font-family:sans-serif>
+<h2>RCPT MODEL SCALER</h2> +height limiter
+<form>
+<table border="0" cellpadding="10" cellspacing="0">
+<tr>
+<td>
+<label for=origdata>ORIGINAL DATA: (copy the entire .rcp text and paste into the box below)</label><br>
+<textarea cols=80 rows=15 style=background-color:lightyellow id=origdata>
+</textarea></td>
+<td><label for=newdata>NEW DATA: (copy all text from this box and overwrite the original .rcp text)</label><br>
+<textarea cols=80 rows=15 style=background-color:lightyellow id=newdata>
+</textarea>
+<tr>
+<td colspan=2>SCALE:<input type=number style=background-color:lightyellow;font-size:20pt value=1.0 id=scale>
+<button type=button onclick=scaler() style=font-size:20pt;width:13em><b>APPLY SCALE</b></button></td>
+</tr>
+</table>
+</form>
+<script>
+var searchfor = ["x","y","z","HalfSpan","RootChord","TipChord","Length","Elevation","SideShear","TopWidthFront","HeightFront","BottomWidthFront","TopWidthRear","HeightRear","BottomWidthRear"]
+function lowestheight(str) {
+  var matches = str.match(/"y": (-?\d*\.?\d+(?:[eE][-+]?\d+)?)/g)
+  if (!matches || matches.length === 0) return null
+  var yValues = matches
+    .map(match => parseFloat(match.split(':')[1]))
+    .filter(n => !isNaN(n));
+  if (yValues.length === 0) return null
+  return Math.min(...yValues)
+}
+function heightlimiter(str,height) {
+  return str.replace(/("y": )(-?\d+(?:\.\d+)?)/g, (match, prefix, zValue) => {
+    return `${prefix}${(parseFloat(zValue) + height)}`
+  });
+}
+function scaler(){
+  var datain = document.getElementById("origdata")
+  var dataout = document.getElementById("newdata")
+  var mult = document.getElementById("scale")
+  var pattern = new RegExp(`(${searchfor.map(k=>`"${k}": `).join("|")})(-?\\d*\\.?\\d+(?:[eE][-+]?\\d+)?)`,'g')
+  var result = datain.value.replace(pattern, (match, key, oldfloat) => {
+    var absmult = Math.abs(parseFloat(mult.value))
+	if (parseFloat(mult.value)<0) mult.value = absmult
+    var newfloat = parseFloat(oldfloat) * absmult
+    return key + newfloat.toFixed(10)
+  });
+  var adjustheight = lowestheight(datain.value) - lowestheight(result)
+  result = heightlimiter(result,adjustheight)
+  dataout.value = result
+}
+</script>
+</body>
+</html>
