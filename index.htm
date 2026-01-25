@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -330,18 +331,19 @@ function scaler(){
             const b = parseInt(hex.substr(5,2),16)/255;
             return {r,g,b,a:1};
         }
-
+/*
 function insertDefaultColor(str) {
   const regex = /("(FuseData|WingData)"\s*:\s*\{[^}]*\}\s*)(?!,\s*"(Material|Color)"\s*:)/g;
   const defaultColor = `"Color": {"r": 1.0,"g": 1.0,"b": 1.0,"a": 1.0}`;
   return str.replace(regex, (match) => {
     return match + `, ${defaultColor}`;
   });
-}
+}*/
 
        function parseInput() {
-			currentString = insertDefaultColor(colorin.value)//document.getElementById('input').value.trim() //insertDefaultColor()
-            colorin.value = currentString
+			//currentString = insertDefaultColor(colorin.value)//document.getElementById('input').value.trim() //insertDefaultColor()
+            //colorin.value = currentString
+			currentString = document.getElementById('input').value.trim()
             const statusEl = document.getElementById('status');
 
             if (!currentString) {
