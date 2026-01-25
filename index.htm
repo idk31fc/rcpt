@@ -1,24 +1,132 @@
-<html>
-<body bgcolor=gray style=font-family:sans-serif>
-<h2>RCPT MODEL SCALER</h2> +height limiter
-<form>
-<table border="0" cellpadding="10" cellspacing="0">
-<tr>
-<td>
-<label for=origdata>ORIGINAL DATA: (copy the entire .rcp text and paste into the box below)</label><br>
-<textarea cols=80 rows=15 style=background-color:lightyellow id=origdata>
-</textarea></td>
-<td><label for=newdata>NEW DATA: (copy all text from this box and overwrite the original .rcp text)</label><br>
-<textarea cols=80 rows=15 style=background-color:lightyellow id=newdata>
-</textarea>
-<tr>
-<td colspan=2>SCALE:<input type=number style=background-color:lightyellow;font-size:20pt value=1.0 id=scale>
-<button type=button onclick=scaler() style=font-size:20pt;width:13em><b>APPLY SCALE</b></button></td>
-</tr>
-</table>
-</form>
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCPT Build Editor</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 80%; margin: 30px auto; padding: 0 20px; background-color: gray}
+        .textareas-container { display: flex; flex-wrap: wrap; gap: 30px; margin: 20px 0; }
+        .textarea-column { flex: 1; min-width: 400px; }
+        .textarea-column textarea { width: 100%; height: 220px; font-family: monospace; padding: 12px; box-sizing: border-box; border-radius: 4px; border: 1px solid #ccc; resize: vertical; background-color: lightyellow}
+        .label { font-weight: bold; margin-bottom: 8px; display: block; font-size: 1.1em; }
+        .container { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; margin: 30px 0; }
+        .column { flex: 1; min-width: 340px; }
+        .custom-dropdown { position: relative; width: 100%; max-width: 400px; }
+        .dropbtn { background-color: lightyellow; color: black; padding: 14px 48px 14px 18px; font-size: 16px; border: 1px solid #ccc; cursor: pointer; width: 100%; text-align: left; box-sizing: border-box; border-radius: 4px; position: relative; }
+        .dropbtn::after { content: "▼"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 14px; color: #555; pointer-events: none; }
+        .dropbtn.open::after { content: "▲"; }
+        .dropdown-content { display: none; position: absolute; background-color: #f9f9f9; width: 100%; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 10; max-height: 360px; overflow-y: auto; border: 1px solid #ccc; border-radius: 4px; }
+        .dropdown-content div { padding: 0px; cursor: pointer; white-space: nowrap; background-color:lightyellow}
+        .dropdown-content div:hover { background-color: #e0e0e0; }
+        .preview-square { width: 100%; max-width: 400px; height: 50px; border: 1px solid gray; margin-bottom: 0px; border-radius: 6px; background-color: white; }
+        button { padding: 12px 20px; margin: 10px 12px 10px 0; font-size: 15px; border-radius: 4px; cursor: pointer; }
+        .controls { margin: 25px 0; display: flex; flex-wrap: wrap; gap: 15px; align-items: center; }
+        #status { margin: 8px 0 20px; color: #555; font-style: italic; }
+		hr {border: 0px; height: 5px; background-color: silver }
+    </style>
+</head>
+<body>
+
+<h1>RCPT Build Editor</h1>
+<h2>&nbsp;</h2>
+<h2><font color="#e00000" style="background-color:#505050">&gt;&nbsp;&gt;&nbsp;&gt;&nbsp;Don't forget to make BACKUPS just in case!&nbsp;&lt;&nbsp;&lt;&nbsp;&lt;</font></h2>
+<hr>
+<h2>Resize...</h2>
+
+    <div class="textareas-container">
+        <div class="textarea-column">
+            <div class="label">Resize input: (paste the entire .rcp file text below...)</div>
+            <textarea id="origdata"></textarea>
+        </div>
+        <div class="textarea-column">
+            <div class="label">Resize output: (overwrite the original .rcp file text with this...)</div>
+            <textarea id="newdata"></textarea>
+        </div>
+    </div>
+	
+    <div class="controls">
+        <span style="font-size:1.5em">Scale:&nbsp;</span><input type="number" min="0.01" id="scale" value="1.0" style="font-size:1.5em; width: 5em; height:2em; border: 1px solid gray; border-radius: 6px; background-color: lightyellow">
+        <button onclick="scaler()" style="width:20em; height: 4em"><b>APPLY SCALE</b></button>
+		<button onclick="resizeInToColorIn()">Copy unsized <br>to color input</button>
+		<button onclick="resizeOutToColorIn()">Copy RESIZED <br>to color input</button>
+    </div>
+	
+<hr>
+<h2>Recolor...</h2>
+
+    <div class="textareas-container">
+        <div class="textarea-column">
+            <div class="label">Recolor input: (paste the entire .rcp file text below...)</div>
+            <textarea id="input"></textarea>
+        </div>
+        <div class="textarea-column">
+            <div class="label">Recolor output: (overwrite the original .rcp file text with this...)</div>
+            <textarea id="output"></textarea>
+        </div>
+    </div>
+
+    <div id="status" style="display:none"></div>
+
+    <div class="container">
+        <div class="column">
+            <div class="label">Search for color/material:</div>
+            <div id="square1" class="preview-square"></div>
+            <div id="dropdown1" class="custom-dropdown">
+                <button class="dropbtn">Select...</button>
+                <div class="dropdown-content"></div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="label">Replacement color/material:</div>
+            <div id="square2" class="preview-square"></div>
+            <div id="dropdown2" class="custom-dropdown">
+                <button class="dropbtn">Select...</button>
+                <div class="dropdown-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <input type="color" id="colorpicker" value="#4488ff" style="height:60px;width:60px;border:0;padding:6px;background-color:lightyellow;border-radius:6px">
+        <button id="addcolor" style="height: 3em">← Add Color</button>
+        <button id="replace" style="width:20em; height: 4em"><b>RECOLOR BUILD</b></button>
+		<button onclick="colorOutToColorIn()">Copy output <br>to input</button>
+    </div>
+	
+<hr>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+
+    <script>
+	
+var datain = document.getElementById("origdata")
+var dataout = document.getElementById("newdata")
+var mult = document.getElementById("scale")
+var colorin = document.getElementById("input")
+var colorout = document.getElementById("output")
+
 var searchfor = ["x","y","z","HalfSpan","RootChord","TipChord","Length","Elevation","SideShear","TopWidthFront","HeightFront","BottomWidthFront","TopWidthRear","HeightRear","BottomWidthRear"]
+
+function resizeInToColorIn(){
+  if (datain.value) {colorin.value = datain.value; parseInput()}
+}
+function resizeOutToColorIn(){
+  if (dataout.value) {colorin.value = dataout.value; parseInput()}
+}
+function colorOutToColorIn(){
+  if (colorout.value) {colorin.value = colorout.value; parseInput()}
+}
+
 function lowestheight(str) {
   var matches = str.match(/"y": (-?\d*\.?\d+(?:[eE][-+]?\d+)?)/g)
   if (!matches || matches.length === 0) return null
@@ -33,10 +141,16 @@ function heightlimiter(str,height) {
     return `${prefix}${(parseFloat(zValue) + height).toFixed(10)}`
   });
 }
+function isLocked(str){
+    const lockedpattern = /"[bB]"\s*:\s*1\s*,\s*"Parts"/;
+    if (lockedpattern.test(str)) {
+        alert('Build is LOCKED!');
+		return true
+    }
+	return false
+}
 function scaler(){
-  var datain = document.getElementById("origdata")
-  var dataout = document.getElementById("newdata")
-  var mult = document.getElementById("scale")
+  if (isLocked(datain.value)) return
   var pattern = new RegExp(`(${searchfor.map(k=>`"${k}": `).join("|")})(-?\\d*\\.?\\d+(?:[eE][-+]?\\d+)?)`,'g')
   var result = datain.value.replace(pattern, (match, key, oldfloat) => {
     var absmult = Math.abs(parseFloat(mult.value))
@@ -48,6 +162,335 @@ function scaler(){
   result = heightlimiter(result,adjustheight)
   dataout.value = result
 }
-</script>
+
+        const materialDisplay = {
+            1: { r: 0.853, g: 0.884, b: 0.813, a: 1},
+            2: { r: 0.224, g: 0.235, b: 0.224, a: 1},
+            3: { r: 0.651, g: 0.745, b: 0.769, a: 1},
+            4: { r: 0.000, g: 0.659, b: 0.059, a: 1}
+        };
+
+        const materialNames = {
+            1: "Material 1: Foam",
+            2: "Material 2: Carbon Fiber",
+            3: "Material 3: Metal",
+            4: "Material 4: Camouflage"
+        };
+
+        const defaultColors = {
+		    //game defaults
+            "White":          { r: 1.000, g: 1.000, b: 1.000, a:1 },
+            "Black":          { r: 0.010, g: 0.010, b: 0.010, a:1 },
+            "Red":            { r: 1.000, g: 0.000, b: 0.000, a:1 },
+			"Blue":           { r: 0.000, g: 0.000, b: 1.000, a:1 },
+			"Yellow":         { r: 1.000, g: 0.921568632, b: 0.0156862754, a:1 },
+			"Green":          { r: 0.000, g: 1.000, b: 0.000, a:1 },
+			"Grey":           { r: 0.500, g: 0.500, b: 0.500, a:1 },
+			//custom defaults
+            "Army Green":     { r: 0.325, g: 0.365, b: 0.271, a:1 },
+            "Army Brown":     { r: 0.463, g: 0.431, b: 0.376, a:1 },
+            "Navy Grey":      { r: 0.583, g: 0.615, b: 0.627, a:1 },
+            "Navy Blue":      { r: 0.000, g: 0.150, b: 0.360, a:1 },
+            "Golden Yellow":  { r: 1.000, g: 0.761, b: 0.000, a:1 },
+            "Maroon":         { r: 0.518, g: 0.110, b: 0.114, a:1 },
+            "Blue Black":     { r: 0.016, g: 0.051, b: 0.200, a:1 },
+            "Pearl":          { r: 0.945, g: 0.937, b: 0.937, a:1 }
+        };
+
+        const colorToName = new Map(Object.entries(defaultColors).map(([n,c]) => [JSON.stringify(c), n]));
+
+        let replacements = [
+            ...[1,2,3,4].map(v => ({type:'material', value:v})),
+            ...Object.entries(defaultColors).map(([n,v]) => ({type:'color', value:v, name:n}))
+        ];
+
+        let uniqueItems = [];
+        let allOccurrences = [];
+        let currentString = '';
+
+        const TOLERANCE = 0.001;
+        const MAX_DECIMALS_KEY = 10;
+        const DISPLAY_DECIMALS = 3;
+
+        function colorsAreClose(c1, c2) {
+            return Math.abs(c1.r - c2.r) <= TOLERANCE &&
+                   Math.abs(c1.g - c2.g) <= TOLERANCE &&
+                   Math.abs(c1.b - c2.b) <= TOLERANCE;
+        }
+
+        function findSimilarColorIndex(newColor) {
+            for (let i = 0; i < replacements.length; i++) {
+                const rep = replacements[i];
+                if (rep.type === 'color' && colorsAreClose(rep.value, newColor)) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        function colorKey(c) {
+            return JSON.stringify({
+                r: +c.r.toFixed(MAX_DECIMALS_KEY),
+                g: +c.g.toFixed(MAX_DECIMALS_KEY),
+                b: +c.b.toFixed(MAX_DECIMALS_KEY),
+                a: +c.a.toFixed(MAX_DECIMALS_KEY)
+            });
+        }
+
+        function getItemKey(item) {
+            return item.type === 'material' ? `m${item.value}` : `c${colorKey(item.value)}`;
+        }
+
+        function formatRGBForDisplay(r, g, b) {
+            return `(${r.toFixed(DISPLAY_DECIMALS)}, ${g.toFixed(DISPLAY_DECIMALS)}, ${b.toFixed(DISPLAY_DECIMALS)})`;
+        }
+
+        function getDisplayName(item) {
+            if (item.type === 'material') {
+                return materialNames[item.value] || `Material ${item.value}`;
+            }
+            const key = colorKey(item.value);
+            const name = colorToName.get(key);
+            const {r, g, b} = item.value;
+            const rgbStr = formatRGBForDisplay(r, g, b);
+            return name ? `${name} ${rgbStr}` : `Color ${rgbStr}`;
+        }
+
+        function getDisplayColor(item) {
+            const c = item.type === 'material' ? materialDisplay[item.value] : item.value;
+            return {
+                r: Math.max(0, Math.min(1, c.r ?? 0)),
+                g: Math.max(0, Math.min(1, c.g ?? 0)),
+                b: Math.max(0, Math.min(1, c.b ?? 0)),
+                a: Math.max(0, Math.min(1, c.a ?? 1))
+            };
+        }
+
+        function rgba(c) {
+            return `rgba(${Math.round(c.r*255)},${Math.round(c.g*255)},${Math.round(c.b*255)},${c.a})`;
+        }
+
+        function populateDropdown1() {
+            const cont = document.querySelector('#dropdown1 .dropdown-content');
+            cont.innerHTML = '';
+            uniqueItems.forEach((item,i) => {
+                const d = document.createElement('div');
+                d.dataset.idx = i;
+                const name = getDisplayName(item);
+                const col = getDisplayColor(item);
+                d.innerHTML = `<span style="color:${rgba(col)}; font-size:1.8em; vertical-align:middle;">■</span> ${name}`;
+                d.onclick = () => select1(i);
+                cont.appendChild(d);
+            });
+        }
+
+        function populateDropdown2() {
+            const cont = document.querySelector('#dropdown2 .dropdown-content');
+            cont.innerHTML = '';
+            replacements.forEach((rep,i) => {
+                const d = document.createElement('div');
+                d.dataset.idx = i;
+                const name = getDisplayName(rep);
+                const col = getDisplayColor(rep);
+                d.innerHTML = `<span style="color:${rgba(col)}; font-size:1.8em; vertical-align:middle;">■</span> ${name}`;
+                d.onclick = () => select2(i);
+                cont.appendChild(d);
+            });
+        }
+
+        function updatePreviewSquare(squareId, color) {
+            document.getElementById(squareId).style.backgroundColor = rgba(color);
+        }
+
+        function select1(idx) {
+            if (idx < 0 || idx >= uniqueItems.length) return;
+            const item = uniqueItems[idx];
+            const btn = document.querySelector('#dropdown1 .dropbtn');
+            btn.textContent = getDisplayName(item);
+            btn.dataset.idx = idx;
+            updatePreviewSquare('square1', getDisplayColor(item));
+            document.querySelector('#dropdown1 .dropdown-content').style.display = 'none';
+            btn.classList.remove('open');
+        }
+
+        function select2(idx) {
+            if (idx < 0 || idx >= replacements.length) return;
+            const rep = replacements[idx];
+            const btn = document.querySelector('#dropdown2 .dropbtn');
+            btn.textContent = getDisplayName(rep);
+            btn.dataset.idx = idx;
+            updatePreviewSquare('square2', getDisplayColor(rep));
+            document.querySelector('#dropdown2 .dropdown-content').style.display = 'none';
+            btn.classList.remove('open');
+        }
+
+        function hexToRgb(hex) {
+            const r = parseInt(hex.substr(1,2),16)/255;
+            const g = parseInt(hex.substr(3,2),16)/255;
+            const b = parseInt(hex.substr(5,2),16)/255;
+            return {r,g,b,a:1};
+        }
+
+function insertDefaultColor(str) {
+  const regex = /("(FuseData|WingData)"\s*:\s*\{[^}]*\}\s*)(?!,\s*"(Material|Color)"\s*:)/g;
+  const defaultColor = `"Color": {"r": 1.0,"g": 1.0,"b": 1.0,"a": 1.0}`;
+  return str.replace(regex, (match) => {
+    return match + `, ${defaultColor}`;
+  });
+}
+
+       function parseInput() {
+			currentString = insertDefaultColor(colorin.value)//document.getElementById('input').value.trim() //insertDefaultColor()
+            colorin.value = currentString
+            const statusEl = document.getElementById('status');
+
+            if (!currentString) {
+                statusEl.textContent = '';
+                uniqueItems = [];
+                allOccurrences = [];
+                populateDropdown1();
+                document.querySelector('#dropdown1 .dropbtn').textContent = 'Select Item...';
+                updatePreviewSquare('square1', {r:1,g:1,b:1,a:0});
+                return;
+            }
+
+            statusEl.textContent = 'Parsing...';
+
+            uniqueItems = [];
+            allOccurrences = [];
+            const seen = new Set();
+
+            const matRe = /"Material"\s*:\s*([1-4])\b/g;
+            let m;
+            while ((m = matRe.exec(currentString))) {
+                const val = parseInt(m[1]);
+                const item = {type:'material', value:val};
+                allOccurrences.push({...item, start:m.index, end:matRe.lastIndex});
+                const k = getItemKey(item);
+                if (!seen.has(k)) {
+                    seen.add(k);
+                    uniqueItems.push(item);
+                }
+            }
+
+            const colRe = /"Color"\s*:\s*\{\s*"r"\s*:\s*([-\d.]+)\s*,\s*"g"\s*:\s*([-\d.]+)\s*,\s*"b"\s*:\s*([-\d.]+)\s*,\s*"a"\s*:\s*([-\d.]+)\s*\}/g;
+            while ((m = colRe.exec(currentString))) {
+                const r = parseFloat(m[1]), g = parseFloat(m[2]), b = parseFloat(m[3]), a = parseFloat(m[4]);
+                const item = {type:'color', value:{r,g,b,a}};
+                allOccurrences.push({...item, start:m.index, end:colRe.lastIndex});
+                const k = getItemKey(item);
+                if (!seen.has(k)) {
+                    seen.add(k);
+                    uniqueItems.push(item);
+                }
+            }
+
+            populateDropdown1();
+
+            if (uniqueItems.length > 0) {
+                select1(0);
+                statusEl.textContent = `Found ${uniqueItems.length} unique item${uniqueItems.length === 1 ? '' : 's'}`;
+            } else {
+                document.querySelector('#dropdown1 .dropbtn').textContent = '(no items found)';
+                updatePreviewSquare('square1', {r:1,g:1,b:1,a:0});
+                statusEl.textContent = 'No materials or colors found';
+            }
+        }
+
+        // Auto-parse with debounce
+        let debounceTimer;
+        document.getElementById('input').addEventListener('input', () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(parseInput, 600);
+        });
+
+        document.getElementById('addcolor').onclick = () => {
+            const hex = document.getElementById('colorpicker').value;
+            const newColor = hexToRgb(hex);
+
+            // Check if a very similar color already exists
+            const similarIdx = findSimilarColorIndex(newColor);
+
+            if (similarIdx !== -1) {
+                // Already exists → just select it (no alert)
+                select2(similarIdx);
+                return;
+            }
+
+            // No close match → add new
+            const newIndex = replacements.length;
+            replacements.push({type:'color', value: newColor});
+            populateDropdown2();
+            select2(newIndex);
+        };
+
+        document.getElementById('replace').onclick = () => {
+		    if (isLocked(input.value)) return
+            const fromIdx = parseInt(document.querySelector('#dropdown1 .dropbtn').dataset.idx ?? -1);
+            const toIdx   = parseInt(document.querySelector('#dropdown2 .dropbtn').dataset.idx ?? -1);
+
+            if (fromIdx < 0 || toIdx < 0 || isNaN(fromIdx) || isNaN(toIdx)) {
+                //alert('Please select both an item to replace AND a replacement value.');
+                return;
+            }
+
+            const source = uniqueItems[fromIdx];
+            const target = replacements[toIdx];
+            const sourceKey = getItemKey(source);
+
+            let result = currentString;
+            let delta = 0;
+
+            allOccurrences
+                .filter(o => getItemKey(o) === sourceKey)
+                .sort((a,b) => a.start - b.start)
+                .forEach(occ => {
+                    let replacementText;
+                    if (target.type === 'material') {
+                        replacementText = `"Material": ${target.value}`;
+                    } else {
+                        const {r, g, b, a} = target.value;
+                        const rStr = r.toFixed(MAX_DECIMALS_KEY).replace(/\.?0+$/, '');
+                        const gStr = g.toFixed(MAX_DECIMALS_KEY).replace(/\.?0+$/, '');
+                        const bStr = b.toFixed(MAX_DECIMALS_KEY).replace(/\.?0+$/, '');
+                        const aStr = a.toFixed(MAX_DECIMALS_KEY).replace(/\.?0+$/, '');
+                        replacementText = `"Color": {"r": ${rStr},"g": ${gStr},"b": ${bStr},"a": ${aStr}}`;
+                    }
+
+                    const start = occ.start + delta;
+                    const end   = occ.end   + delta;
+                    result = result.slice(0, start) + replacementText + result.slice(end);
+                    delta += replacementText.length - (occ.end - occ.start);
+                });
+
+            document.getElementById('output').value = result;
+        };
+
+        // Dropdown toggle
+        document.querySelectorAll('.dropbtn').forEach(btn => {
+            btn.onclick = e => {
+                e.stopPropagation();
+                const content = btn.nextElementSibling;
+                const isOpen = content.style.display === 'block';
+                document.querySelectorAll('.dropdown-content').forEach(c => c.style.display = 'none');
+                document.querySelectorAll('.dropbtn').forEach(b => b.classList.remove('open'));
+                if (!isOpen) {
+                    content.style.display = 'block';
+                    btn.classList.add('open');
+                }
+            };
+        });
+
+        document.addEventListener('click', e => {
+            if (!e.target.closest('.custom-dropdown')) {
+                document.querySelectorAll('.dropdown-content').forEach(c => c.style.display = 'none');
+                document.querySelectorAll('.dropbtn').forEach(b => b.classList.remove('open'));
+            }
+        });
+
+        // Init
+        populateDropdown2();
+        if (replacements.length > 4) select2(4);
+    </script>
 </body>
 </html>
