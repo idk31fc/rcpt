@@ -36,7 +36,7 @@
 <body>
 
 <p><span style="font-size:20pt"><b>RCPT Build Editor</b> — <font color="maroon">Don't forget to make <b><i>BACKUPS!</i></b></font></span></p>
-<p><font color="darkgreen">Resizing fixed (I think?). Should "WeightModifier" also scale? Ballast scaling possibly wrong. Balloon position not affected for now.</font></p>
+<p><font color="darkgreen">Resizing fixed (I think?). Should "WeightModifier" (custom build weight) also scale? Ballast scaling possibly wrong.</font></p>
 
     <div class="container">
         <div class="column">
@@ -247,7 +247,7 @@ function scaler() {
 
   if (scaleFactor < 0) {
     scaleFactor = Math.abs(scaleFactor);
-    mult.value = scaleFactor.toFixed(3);
+    mult.value = scaleFactor.toFixed(10);
   }
 
   if (scaleFactor <= 0 || isNaN(scaleFactor)) {
@@ -270,20 +270,20 @@ function scaler() {
 
   // 1. Scale structural dimensions in FuseData and WingData
   data.Parts.forEach(part => {
-    // FuseData (fuselages, bodies)
+    // FuseData
     if (part.FuseData && typeof part.FuseData === 'object') {
       Object.keys(part.FuseData).forEach(key => {
         if (searchfor.includes(key) && typeof part.FuseData[key] === 'number') {
-          part.FuseData[key] *= scaleFactor;
+          part.FuseData[key] = Number((part.FuseData[key] * scaleFactor).toFixed(10));
         }
       });
     }
 
-    // WingData (wings, stabs, fins, control surfaces)
+    // WingData
     if (part.WingData && typeof part.WingData === 'object') {
       Object.keys(part.WingData).forEach(key => {
         if (searchfor.includes(key) && typeof part.WingData[key] === 'number') {
-          part.WingData[key] *= scaleFactor;
+          part.WingData[key] = Number((part.WingData[key] * scaleFactor).toFixed(10));
         }
       });
     }
@@ -295,13 +295,11 @@ function scaler() {
     if (!specialSKUs.has(part.SKU)) return;
 
     if ('Scale' in part) {
-      // Existing → multiply
       if (typeof part.Scale === 'number' && !isNaN(part.Scale)) {
-        part.Scale *= scaleFactor;
+        part.Scale = Number((part.Scale * scaleFactor).toFixed(10));
       }
     } else {
-      // Missing → insert default (scaled from 1.0)
-      part.Scale = scaleFactor;
+      part.Scale = Number(scaleFactor.toFixed(10));
     }
   });
 
@@ -310,7 +308,7 @@ function scaler() {
     if (part.LocalPosition && typeof part.LocalPosition === 'object') {
       ['x', 'y', 'z'].forEach(axis => {
         if (typeof part.LocalPosition[axis] === 'number' && !isNaN(part.LocalPosition[axis])) {
-          part.LocalPosition[axis] *= scaleFactor;
+          part.LocalPosition[axis] = Number((part.LocalPosition[axis] * scaleFactor).toFixed(10));
         }
       });
     }
@@ -337,7 +335,7 @@ function scaler() {
       if (Math.abs(adjust) > 1e-6) {
         data.Parts.forEach(part => {
           if (part.LocalPosition?.y != null) {
-            part.LocalPosition.y += adjust;
+            part.LocalPosition.y = Number((part.LocalPosition.y + adjust).toFixed(10));
           }
         });
       }
@@ -356,7 +354,7 @@ function scaler() {
       ['x', 'y', 'z'].forEach(axis => {
         let delta = (axis === 'x' ? dx : axis === 'y' ? dy : dz);
         if (typeof part.LocalPosition[axis] === 'number') {
-          part.LocalPosition[axis] += delta;
+          part.LocalPosition[axis] = Number((part.LocalPosition[axis] + delta).toFixed(10));
         }
       });
     }
@@ -374,8 +372,14 @@ function scaler() {
     }
   });
 
-  // Output with 2-space indent (clean and readable)
-  const newJson = JSON.stringify(data, null, 2);
+  // Output with 2-space indent + enforce 10-decimal limit on floats
+  const newJson = JSON.stringify(data, (key, value) => {
+    if (typeof value === 'number' && !Number.isInteger(value)) {
+      return Number(value.toFixed(10));
+    }
+    return value;
+  }, 2);
+
   dataout.value = newJson;
 }
 
@@ -389,7 +393,7 @@ function isLocked(str){
 }
 
 // ────────────────────────────────────────────────
-// Color / Material logic (unchanged from original)
+// Color / Material logic (unchanged)
 // ────────────────────────────────────────────────
 
 const materialDisplay = {
