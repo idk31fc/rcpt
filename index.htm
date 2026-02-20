@@ -112,7 +112,7 @@ Note about repositioning: <br>
 Units are in meters. 1.0 means 1 meter or 1000 mm (0.001 = 1 mm). While looking at the default left side view of your build, +x is away from you, -x is toward you, +y is up, -y is down, +z is to the left (or forward from the plane's perspective), -z is to the right (or backward from the plane's perspective). 
 id+ is how much to add to the part ids to make them unique. 100 or more is a safe bet. I use this to make "planes in formation" by copy and pasting repositioned build parts with padded ids. 
 Moving builds on the x axis will break symmetry. This tool will move symmetric (mirrored) parts correctly, but editing them later may be a pain. You might have to remove symmetry by cloning the part and deleting the unnecessary mirrored parts. 
-<br>&nbsp;<br>
+<br> <br>
 Example values:<br>
 "Get this damn thing off the floor and move it backward a little (plane's POV)." x,y,z,id+ = 0,0.65,-0.02,0<br>
 "It's too damn high. Lower and move it forward (plane's POV) and closer to me (don't care about symmetry)." x,y,z,id+ = -0.1,-0.5,0.007,0<br>
@@ -206,12 +206,10 @@ function rePosition(str, reposeInput) {
   });
 
   if (idAdd !== 0) {
-    // Updated regex: matches both "ID" and "Servo" (with optional negative sign)
     result = result.replace(
       /("(?:ID|Servo)"\s*:\s*)(-?\d+)/g,
       (m, prefix, val) => {
         const n = parseInt(val, 10);
-        // Keep -1 unchanged (common for symmetric/inactive), add to others
         return `${prefix}${n === -1 ? -1 : n + idAdd}`;
       }
     );
@@ -257,63 +255,128 @@ function scaler() {
     mult.value = "1.000";
   }
 
-  // Always run all steps — repositioning & ID shift work even at scale=1
-  let result = datain.value;
-
-  // 1. Scale structural dimensions
-  const dimPattern = new RegExp(
-    `(${searchfor.map(k => `"${k}": `).join("|")})(-?\\d*\\.?\\d+(?:[eE][-+]?\\d+)?)`,
-    'g'
-  );
-  result = result.replace(dimPattern, (m, key, val) => {
-    return key + (parseFloat(val) * scaleFactor).toFixed(10);
-  });
-
-  // 2. Scale (or insert if missing) "Scale" in special parts — only if scale ≠1
-  if (scaleFactor !== 1) {
-    const partKeysPattern = hasScale.map(k => `"${k}"\\s*:\\s*\\{`).join("|");
-    const partBlockRegex = new RegExp(`(${partKeysPattern})([\\s\\S]*?)(\\})`, 'g');
-
-    result = result.replace(partBlockRegex, (full, open, inner, close) => {
-      let updated = inner;
-
-      if (/"Scale"\s*:/i.test(inner)) {
-        updated = inner.replace(
-          /("Scale"\s*:\s*)(-?[\d.]+(?:[eE][-+]?\d+)?)/g,
-          (m, prefix, val) => {
-            const num = parseFloat(val);
-            if (isNaN(num)) return m;
-            return `${prefix}${(num * scaleFactor).toFixed(10)}`;
-          }
-        );
-      } else {
-        updated = inner.replace(
-          /(\s*)\}$/,
-          `$1  ,"Scale": ${scaleFactor.toFixed(10)}\n$1}`
-        );
-      }
-
-      return open + updated + close;
-    });
+  let data;
+  try {
+    data = JSON.parse(datain.value);
+  } catch (e) {
+    alert("Invalid JSON input — cannot resize.");
+    return;
   }
 
-  // 3. Scale LocalPosition coordinates
-  result = scaleLocalPositions(result, scaleFactor.toString());
+  if (!Array.isArray(data.Parts)) {
+    alert("No 'Parts' array found.");
+    return;
+  }
 
-  // 4. Adjust height
-  const origMinY = lowestheight(datain.value);
-  const newMinY = lowestheight(result);
-  if (origMinY !== null && newMinY !== null && !isNaN(origMinY - newMinY)) {
-    const adjust = origMinY - newMinY;
-    if (Math.abs(adjust) > 1e-6) {
-      result = heightlimiter(result, adjust);
+  // 1. Scale structural dimensions in FuseData and WingData
+  data.Parts.forEach(part => {
+    // FuseData (fuselages, bodies)
+    if (part.FuseData && typeof part.FuseData === 'object') {
+      Object.keys(part.FuseData).forEach(key => {
+        if (searchfor.includes(key) && typeof part.FuseData[key] === 'number') {
+          part.FuseData[key] *= scaleFactor;
+        }
+      });
+    }
+
+    // WingData (wings, stabs, fins, control surfaces)
+    if (part.WingData && typeof part.WingData === 'object') {
+      Object.keys(part.WingData).forEach(key => {
+        if (searchfor.includes(key) && typeof part.WingData[key] === 'number') {
+          part.WingData[key] *= scaleFactor;
+        }
+      });
+    }
+  });
+
+  // 2. Handle per-part "Scale" for special SKUs
+  const specialSKUs = new Set(hasScale);
+  data.Parts.forEach(part => {
+    if (!specialSKUs.has(part.SKU)) return;
+
+    if ('Scale' in part) {
+      // Existing → multiply
+      if (typeof part.Scale === 'number' && !isNaN(part.Scale)) {
+        part.Scale *= scaleFactor;
+      }
+    } else {
+      // Missing → insert default (scaled from 1.0)
+      part.Scale = scaleFactor;
+    }
+  });
+
+  // 3. Scale all LocalPosition values
+  data.Parts.forEach(part => {
+    if (part.LocalPosition && typeof part.LocalPosition === 'object') {
+      ['x', 'y', 'z'].forEach(axis => {
+        if (typeof part.LocalPosition[axis] === 'number' && !isNaN(part.LocalPosition[axis])) {
+          part.LocalPosition[axis] *= scaleFactor;
+        }
+      });
+    }
+  });
+
+  // 4. Height adjustment: shift y so lowest point stays the same
+  let origMinY = Infinity;
+  data.Parts.forEach(part => {
+    if (part.LocalPosition?.y != null) {
+      origMinY = Math.min(origMinY, part.LocalPosition.y);
+    }
+  });
+
+  if (isFinite(origMinY)) {
+    let newMinY = Infinity;
+    data.Parts.forEach(part => {
+      if (part.LocalPosition?.y != null) {
+        newMinY = Math.min(newMinY, part.LocalPosition.y);
+      }
+    });
+
+    if (isFinite(newMinY)) {
+      const adjust = origMinY - newMinY;
+      if (Math.abs(adjust) > 1e-6) {
+        data.Parts.forEach(part => {
+          if (part.LocalPosition?.y != null) {
+            part.LocalPosition.y += adjust;
+          }
+        });
+      }
     }
   }
 
-  // 5. Reposition + ID/Servo shift
-  result = rePosition(result, reposeInput.value);
+  // 5. Reposition (x,y,z) + ID/Servo offset
+  const posParts = reposeInput.value.split(",").map(s => s.trim());
+  const dx = parseFloat(posParts[0]) || 0;
+  const dy = parseFloat(posParts[1]) || 0;
+  const dz = parseFloat(posParts[2]) || 0;
+  let idAdd = parseInt(posParts[3]) || 0;
 
-  dataout.value = result;
+  data.Parts.forEach(part => {
+    if (part.LocalPosition) {
+      ['x', 'y', 'z'].forEach(axis => {
+        let delta = (axis === 'x' ? dx : axis === 'y' ? dy : dz);
+        if (typeof part.LocalPosition[axis] === 'number') {
+          part.LocalPosition[axis] += delta;
+        }
+      });
+    }
+
+    if (idAdd !== 0) {
+      if (typeof part.ID === 'number' && part.ID !== -1) {
+        part.ID += idAdd;
+      }
+      if (typeof part.Servo === 'number' && part.Servo !== -1) {
+        part.Servo += idAdd;
+      }
+      if (typeof part.SymmetricPartID === 'number' && part.SymmetricPartID !== -1) {
+        part.SymmetricPartID += idAdd;
+      }
+    }
+  });
+
+  // Output with 2-space indent (clean and readable)
+  const newJson = JSON.stringify(data, null, 2);
+  dataout.value = newJson;
 }
 
 function isLocked(str){
@@ -326,7 +389,7 @@ function isLocked(str){
 }
 
 // ────────────────────────────────────────────────
-// Color / Material logic (unchanged)
+// Color / Material logic (unchanged from original)
 // ────────────────────────────────────────────────
 
 const materialDisplay = {
@@ -631,7 +694,6 @@ document.getElementById('addcustomcolor').onclick = () => {
     const a = parts.length >= 4 ? parseFloat(parts[3]) : 1;
     
     if (isNaN(r) || isNaN(g) || isNaN(b) || isNaN(a)) {
-        alert("Invalid number format — use decimals like 1.4, -0.3, 2.5, 0.9");
         return;
     }
     
