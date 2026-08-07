@@ -1,0 +1,2801 @@
+{
+  "Version": 2,
+  "Name": "F-14 Tomcat",
+  "Author": "idk31",
+  "AuthorFriendly": "idk31",
+  "AuthorID": 25085993801061510,
+  "LastAuthor": "idk31",
+  "LastAuthorFriendly": "idk31",
+  "LastAuthorID": 25085993801061510,
+  "WeightModifier": 1.3,
+  "Guid": {
+    "value": "cb9f8396-dfc2-4a3f-a65c-047cc896a74e",
+    "AsGuid": "cb9f8396-dfc2-4a3f-a65c-047cc896a74e"
+  },
+  "Parts": [
+    {
+      "ID": 1,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -1.356E-07,
+        "y": 0.31086573,
+        "z": -0.5493841
+      },
+      "FuseData": {
+        "Length": 1.07142866,
+        "Elevation": -0.0244897958,
+        "TopWidthFront": 0.382653058,
+        "TopRadiusFront": 0.04,
+        "HeightFront": 0.153061226,
+        "BottomRadiusFront": 0.5,
+        "BottomWidthFront": 0.3214286,
+        "TopWidthRear": 0.3459184,
+        "TopRadiusRear": 0.099999994,
+        "HeightRear": 0.08571429,
+        "BottomRadiusRear": 0.04,
+        "BottomWidthRear": 0.3459184
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 2,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -4.19E-08,
+        "y": 0.37340346,
+        "z": 0.121920042
+      },
+      "FuseData": {
+        "Length": 1.07142866,
+        "Elevation": -0.0612244941,
+        "TopWidthFront": 0.266326547,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.291581631,
+        "BottomRadiusFront": 0.5,
+        "BottomWidthFront": 0.266326547,
+        "TopWidthRear": 0.119387753,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.107142858,
+        "BottomRadiusRear": 0.39,
+        "BottomWidthRear": 0.174489811
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 3,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 6.84E-08,
+        "y": 0.319449455,
+        "z": 1.26528823
+      },
+      "FuseData": {
+        "Length": 0.321428567,
+        "Elevation": 0.0286989789,
+        "TopWidthFront": 0.252551019,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.261734724,
+        "BottomRadiusFront": 0.799999952,
+        "BottomWidthFront": 0.280102074,
+        "TopWidthRear": 0.2961973,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.307653069,
+        "BottomRadiusRear": 0.799999952,
+        "BottomWidthRear": 0.3191327
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 8,
+      "SKU": "PART_PARAMETRIC_FIN_L",
+      "SymmetricPartID": 9,
+      "LocalPosition": {
+        "x": -0.31809926,
+        "y": 0.405982077,
+        "z": -1.44715035
+      },
+      "Control": {
+        "Mix": 3,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.516581655,
+        "RootChord": 0.642857134,
+        "TipChord": 0.218112245,
+        "DihedralDegrees": -5.0,
+        "WingSweep": 49.0,
+        "ControlSize": 0.25
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 9,
+      "SKU": "PART_PARAMETRIC_FIN_R",
+      "SymmetricPartID": 8,
+      "LocalPosition": {
+        "x": 0.31809926,
+        "y": 0.405982077,
+        "z": -1.44715035
+      },
+      "Control": {
+        "Mix": 3,
+        "Reversed": true,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.516581655,
+        "RootChord": 0.642857134,
+        "TipChord": 0.218112245,
+        "DihedralDegrees": -5.0,
+        "WingSweep": 49.0,
+        "ControlSize": 0.25
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 10,
+      "SKU": "PART_PARAHORSTAB_L",
+      "SymmetricPartID": 11,
+      "LocalPosition": {
+        "x": -0.494327784,
+        "y": 0.326791227,
+        "z": -1.34149182
+      },
+      "Control": {
+        "Mix": 1,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.520408154,
+        "RootChord": 0.811224461,
+        "TipChord": 0.1377551,
+        "Incidence": -4.0,
+        "DihedralDegrees": -3.0,
+        "WingSweep": 52.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 36
+    },
+    {
+      "ID": 11,
+      "SKU": "PART_PARAHORSTAB_R",
+      "SymmetricPartID": 10,
+      "LocalPosition": {
+        "x": 0.494327784,
+        "y": 0.326791227,
+        "z": -1.34149182
+      },
+      "Control": {
+        "Mix": 1,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.520408154,
+        "RootChord": 0.811224461,
+        "TipChord": 0.1377551,
+        "Incidence": -4.0,
+        "DihedralDegrees": -3.0,
+        "WingSweep": 52.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 37
+    },
+    {
+      "ID": 12,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -4.35E-08,
+        "y": 0.37340346,
+        "z": 0.388246566
+      },
+      "FuseData": {
+        "Length": 0.266326547,
+        "TopWidthFront": 0.3122449,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.307653069,
+        "BottomRadiusFront": 0.669999957,
+        "BottomWidthFront": 0.3145408,
+        "TopWidthRear": 0.266326547,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.291581631,
+        "BottomRadiusRear": 0.5,
+        "BottomWidthRear": 0.266326547
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 13,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -4.52E-08,
+        "y": 0.3481484,
+        "z": 0.9438588
+      },
+      "FuseData": {
+        "Length": 0.5556123,
+        "Elevation": 0.0252551045,
+        "TopWidthFront": 0.2961973,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.307653069,
+        "BottomRadiusFront": 0.799999952,
+        "BottomWidthFront": 0.3191327,
+        "TopWidthRear": 0.3122449,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.307653069,
+        "BottomRadiusRear": 0.669999957,
+        "BottomWidthRear": 0.3145408
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 21,
+        "Scale": 0.149999991,
+        "PosX": 0.4004371,
+        "PosY": 0.0507775545
+      }
+    },
+    {
+      "ID": 14,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -8E-10,
+        "y": 0.291898429,
+        "z": 1.47192109
+      },
+      "FuseData": {
+        "Length": 0.206632659,
+        "Elevation": 0.02755102,
+        "TopWidthFront": 0.174489811,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.197448984,
+        "BottomRadiusFront": 0.75,
+        "BottomWidthFront": 0.1997449,
+        "TopWidthRear": 0.252551019,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.261734724,
+        "BottomRadiusRear": 0.799999952,
+        "BottomWidthRear": 0.280102074
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 15,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -8E-10,
+        "y": 0.2505719,
+        "z": 1.71069717
+      },
+      "FuseData": {
+        "Length": 0.123979591,
+        "Elevation": 0.0229591839,
+        "TopWidthFront": 0.0076530613,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.0076530613,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0076530613,
+        "TopWidthRear": 0.12627551,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.12627551,
+        "BottomRadiusRear": 0.719999969,
+        "BottomWidthRear": 0.12627551
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 16,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -8E-10,
+        "y": 0.273531049,
+        "z": 1.58671737
+      },
+      "FuseData": {
+        "Length": 0.114795916,
+        "Elevation": 0.0183673464,
+        "TopWidthFront": 0.12627551,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.12627551,
+        "BottomRadiusFront": 0.719999969,
+        "BottomWidthFront": 0.12627551,
+        "TopWidthRear": 0.174489811,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.197448984,
+        "BottomRadiusRear": 0.75,
+        "BottomWidthRear": 0.1997449
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 17,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 1.154E-07,
+        "y": 0.499630481,
+        "z": 0.2242724
+      },
+      "FuseData": {
+        "Length": 0.541836739,
+        "Elevation": -0.0903061256,
+        "TopWidthFront": 0.168367356,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.133163273,
+        "BottomRadiusFront": 0.01,
+        "BottomWidthFront": 0.183673471,
+        "TopWidthRear": 0.0734693855,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.0918367356,
+        "BottomRadiusRear": 0.01,
+        "BottomWidthRear": 0.131632656
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 18,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 8.97E-08,
+        "y": 0.5394264,
+        "z": 0.5885581
+      },
+      "FuseData": {
+        "Length": 0.3642857,
+        "Elevation": -0.03979592,
+        "TopWidthFront": 0.2234694,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.167602062,
+        "BottomRadiusFront": 0.01,
+        "BottomWidthFront": 0.226530612,
+        "TopWidthRear": 0.168367356,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.133163273,
+        "BottomRadiusRear": 0.01,
+        "BottomWidthRear": 0.183673471
+      },
+      "Material": 3
+    },
+    {
+      "ID": 20,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 9.34E-08,
+        "y": 0.533686638,
+        "z": 0.8028436
+      },
+      "FuseData": {
+        "Length": 0.214285716,
+        "Elevation": 0.00573979644,
+        "TopWidthFront": 0.217346936,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.156122446,
+        "BottomRadiusFront": 0.01,
+        "BottomWidthFront": 0.220408171,
+        "TopWidthRear": 0.2234694,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.167602062,
+        "BottomRadiusRear": 0.01,
+        "BottomWidthRear": 0.226530612
+      },
+      "Material": 3,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 50,
+        "Scale": 0.179976672,
+        "PosX": 0.19430317,
+        "PosY": -0.013960436,
+        "Rotation": -96.0
+      }
+    },
+    {
+      "ID": 21,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 9.16E-08,
+        "y": 0.5084315,
+        "z": 0.9436597
+      },
+      "FuseData": {
+        "Length": 0.140816346,
+        "Elevation": 0.0252551045,
+        "TopWidthFront": 0.1877401,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.114795916,
+        "BottomRadiusFront": 0.01,
+        "BottomWidthFront": 0.205102041,
+        "TopWidthRear": 0.217346936,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.156122446,
+        "BottomRadiusRear": 0.01,
+        "BottomWidthRear": 0.220408171
+      },
+      "Material": 3
+    },
+    {
+      "ID": 22,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 9.13E-08,
+        "y": 0.455625385,
+        "z": 1.12044537
+      },
+      "FuseData": {
+        "Length": 0.176785737,
+        "Elevation": 0.0528061278,
+        "TopWidthFront": 0.104081631,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.0298469383,
+        "BottomRadiusFront": 0.01,
+        "BottomWidthFront": 0.111734711,
+        "TopWidthRear": 0.1877401,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.114795916,
+        "BottomRadiusRear": 0.01,
+        "BottomWidthRear": 0.205102041
+      },
+      "Material": 3,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 50,
+        "Scale": 0.116037175,
+        "PosX": 0.15983741,
+        "PosY": -0.0482736528,
+        "Rotation": 104.0
+      }
+    },
+    {
+      "ID": 23,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 24,
+      "YawPitchRoll": {
+        "x": -6.931E-06,
+        "y": 2.9471E-06,
+        "z": 259.999939
+      },
+      "LocalPosition": {
+        "x": -0.258871228,
+        "y": 0.404926836,
+        "z": 0.5099244
+      },
+      "FuseData": {
+        "Length": 0.63345027,
+        "Elevation": -0.006122449,
+        "SideShear": 0.009183673,
+        "TopWidthFront": 0.0137755116,
+        "TopRadiusFront": 0.5,
+        "HeightFront": 0.15,
+        "BottomRadiusFront": 0.5,
+        "BottomWidthFront": 0.0137755116,
+        "TopWidthRear": 0.0230159648,
+        "TopRadiusRear": 0.199999988,
+        "HeightRear": 0.180612251,
+        "BottomRadiusRear": 0.199999988,
+        "BottomWidthRear": 0.022887053
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 50,
+        "Scale": 0.5898208,
+        "PosX": 0.3094168,
+        "PosY": 0.00370577723
+      }
+    },
+    {
+      "ID": 24,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 23,
+      "YawPitchRoll": {
+        "x": -6.931E-06,
+        "y": -2.9471E-06,
+        "z": -259.999939
+      },
+      "LocalPosition": {
+        "x": 0.258871228,
+        "y": 0.404926836,
+        "z": 0.5099244
+      },
+      "FuseData": {
+        "Length": 0.63345027,
+        "Elevation": -0.006122449,
+        "SideShear": 0.009183673,
+        "TopWidthFront": 0.0137755116,
+        "TopRadiusFront": 0.5,
+        "HeightFront": 0.15,
+        "BottomRadiusFront": 0.5,
+        "BottomWidthFront": 0.0137755116,
+        "TopWidthRear": 0.0230159648,
+        "TopRadiusRear": 0.199999988,
+        "HeightRear": 0.180612251,
+        "BottomRadiusRear": 0.199999988,
+        "BottomWidthRear": 0.022887053
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 50,
+        "Scale": 0.418372959,
+        "PosX": 0.205480486,
+        "PosY": -0.0002935461
+      }
+    },
+    {
+      "ID": 25,
+      "SKU": "PART_PARAWING_L",
+      "SymmetricPartID": 26,
+      "YawPitchRoll": {
+        "x": 359.938232,
+        "y": -1E-10,
+        "z": 1.94E-07
+      },
+      "LocalPosition": {
+        "x": -0.3357101,
+        "y": 0.415907949,
+        "z": -0.03379195
+      },
+      "Control": {
+        "Mix": 2,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.214285716,
+        "RootChord": 1.40816319,
+        "TipChord": 0.841836751,
+        "DihedralDegrees": 1.0,
+        "WingSweep": 65.0
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 26,
+      "SKU": "PART_PARAWING_R",
+      "SymmetricPartID": 25,
+      "YawPitchRoll": {
+        "x": 359.938232,
+        "y": 1E-10,
+        "z": -1.94E-07
+      },
+      "LocalPosition": {
+        "x": 0.3357101,
+        "y": 0.415907949,
+        "z": -0.03379195
+      },
+      "Control": {
+        "Mix": 2,
+        "Reversed": true,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.214285716,
+        "RootChord": 1.40816319,
+        "TipChord": 0.841836751,
+        "DihedralDegrees": 1.0,
+        "WingSweep": 65.0
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 27,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -8.61E-08,
+        "y": 0.3919882,
+        "z": 0.430207968
+      },
+      "FuseData": {
+        "Length": 0.9795919,
+        "Elevation": -0.08112245,
+        "TopWidthFront": 0.3726357,
+        "TopRadiusFront": 0.01,
+        "HeightFront": 0.011479592,
+        "BottomRadiusFront": 0.01,
+        "BottomWidthFront": 0.367346942,
+        "TopWidthRear": 0.382653058,
+        "TopRadiusRear": 0.04,
+        "HeightRear": 0.153061226,
+        "BottomRadiusRear": 0.5,
+        "BottomWidthRear": 0.3214286
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 28,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 29,
+      "YawPitchRoll": {
+        "x": 1.6802E-06,
+        "y": -1.47E-07,
+        "z": 349.999969
+      },
+      "LocalPosition": {
+        "x": -0.294230551,
+        "y": 0.263868,
+        "z": -0.7031158
+      },
+      "FuseData": {
+        "Length": 0.863265336,
+        "Elevation": 0.0168367364,
+        "TopWidthFront": 0.3122449,
+        "TopRadiusFront": 0.799999952,
+        "HeightFront": 0.3,
+        "BottomRadiusFront": 0.7,
+        "BottomWidthFront": 0.3122449,
+        "TopWidthRear": 0.260204077,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.260204077,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.260204077
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 29,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 28,
+      "YawPitchRoll": {
+        "x": 1.6802E-06,
+        "y": 1.47E-07,
+        "z": -349.999969
+      },
+      "LocalPosition": {
+        "x": 0.294230551,
+        "y": 0.263868,
+        "z": -0.7031158
+      },
+      "FuseData": {
+        "Length": 0.863265336,
+        "Elevation": 0.0168367364,
+        "TopWidthFront": 0.3122449,
+        "TopRadiusFront": 0.799999952,
+        "HeightFront": 0.3,
+        "BottomRadiusFront": 0.7,
+        "BottomWidthFront": 0.3122449,
+        "TopWidthRear": 0.260204077,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.260204077,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.260204077
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 30,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 31,
+      "YawPitchRoll": {
+        "x": 7.649E-07,
+        "y": -3.4951E-06,
+        "z": 349.999969
+      },
+      "LocalPosition": {
+        "x": -0.291306973,
+        "y": 0.280449033,
+        "z": -1.65515661
+      },
+      "FuseData": {
+        "Length": 0.205102041,
+        "Hollow": true,
+        "TopWidthFront": 0.254081637,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.254081637,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.254081637,
+        "TopWidthRear": 0.202040836,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.202040836,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.202040836
+      },
+      "Material": 2,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 50,
+        "Scale": 6.27476168,
+        "PosX": -0.309647143,
+        "PosY": -0.117801547,
+        "Rotation": 90.0
+      }
+    },
+    {
+      "ID": 31,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 30,
+      "YawPitchRoll": {
+        "x": 7.649E-07,
+        "y": 3.4951E-06,
+        "z": -349.999969
+      },
+      "LocalPosition": {
+        "x": 0.291306973,
+        "y": 0.280449033,
+        "z": -1.65515661
+      },
+      "FuseData": {
+        "Length": 0.205102041,
+        "Hollow": true,
+        "TopWidthFront": 0.254081637,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.254081637,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.254081637,
+        "TopWidthRear": 0.202040836,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.202040836,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.202040836
+      },
+      "Material": 2,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 50,
+        "Scale": 6.27476168,
+        "PosX": -0.309647143,
+        "PosY": -0.117801547,
+        "Rotation": 90.0
+      }
+    },
+    {
+      "ID": 32,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 33,
+      "YawPitchRoll": {
+        "x": 9.555E-07,
+        "y": 8.36E-08,
+        "z": -349.999969
+      },
+      "LocalPosition": {
+        "x": 0.2875859,
+        "y": 0.301551968,
+        "z": 0.008618743
+      },
+      "FuseData": {
+        "Length": 0.7117347,
+        "Elevation": -0.0382653065,
+        "Hollow": true,
+        "TopWidthFront": 0.202040821,
+        "TopRadiusFront": 0.01,
+        "HeightFront": 0.215816334,
+        "BottomRadiusFront": 0.08,
+        "BottomWidthFront": 0.195153058,
+        "TopWidthRear": 0.3122449,
+        "TopRadiusRear": 0.799999952,
+        "HeightRear": 0.3,
+        "BottomRadiusRear": 0.7,
+        "BottomWidthRear": 0.3122449
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 33,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 32,
+      "YawPitchRoll": {
+        "x": 9.555E-07,
+        "y": -8.36E-08,
+        "z": 349.999969
+      },
+      "LocalPosition": {
+        "x": -0.2875859,
+        "y": 0.301551968,
+        "z": 0.008618743
+      },
+      "FuseData": {
+        "Length": 0.7117347,
+        "Elevation": -0.0382653065,
+        "Hollow": true,
+        "TopWidthFront": 0.202040821,
+        "TopRadiusFront": 0.01,
+        "HeightFront": 0.215816334,
+        "BottomRadiusFront": 0.08,
+        "BottomWidthFront": 0.195153058,
+        "TopWidthRear": 0.3122449,
+        "TopRadiusRear": 0.799999952,
+        "HeightRear": 0.3,
+        "BottomRadiusRear": 0.7,
+        "BottomWidthRear": 0.3122449
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 34,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 35,
+      "YawPitchRoll": {
+        "x": 62.47412,
+        "y": 341.6235,
+        "z": 337.9718
+      },
+      "LocalPosition": {
+        "x": -0.283128947,
+        "y": 0.296908379,
+        "z": 0.220489413
+      },
+      "FuseData": {
+        "Length": 0.241071433,
+        "Elevation": -0.459183663,
+        "Hollow": true,
+        "TopWidthFront": 0.154591843,
+        "TopRadiusFront": 0.01,
+        "HeightFront": 0.47295922,
+        "BottomRadiusFront": 0.11,
+        "BottomWidthFront": 0.194387749,
+        "TopWidthRear": 0.218877554,
+        "TopRadiusRear": 0.01,
+        "HeightRear": 0.429336727,
+        "BottomRadiusRear": 0.57,
+        "BottomWidthRear": 0.2464286
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 35,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 34,
+      "YawPitchRoll": {
+        "x": 62.47412,
+        "y": -341.6235,
+        "z": -337.9718
+      },
+      "LocalPosition": {
+        "x": 0.283128947,
+        "y": 0.296908379,
+        "z": 0.220489413
+      },
+      "FuseData": {
+        "Length": 0.241071433,
+        "Elevation": -0.459183663,
+        "Hollow": true,
+        "TopWidthFront": 0.154591843,
+        "TopRadiusFront": 0.01,
+        "HeightFront": 0.47295922,
+        "BottomRadiusFront": 0.11,
+        "BottomWidthFront": 0.194387749,
+        "TopWidthRear": 0.218877554,
+        "TopRadiusRear": 0.01,
+        "HeightRear": 0.429336727,
+        "BottomRadiusRear": 0.57,
+        "BottomWidthRear": 0.2464286
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 36,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 0.0,
+        "y": 269.999939,
+        "z": 0.0
+      },
+      "LocalPosition": {
+        "x": -0.624445856,
+        "y": 0.3210882,
+        "z": -1.39319456
+      },
+      "Control": {
+        "Mix": 5,
+        "Deflection": 10.0
+      }
+    },
+    {
+      "ID": 37,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 0.0,
+        "y": 90.00005,
+        "z": 0.0
+      },
+      "LocalPosition": {
+        "x": 0.624445856,
+        "y": 0.3210882,
+        "z": -1.39319456
+      },
+      "Control": {
+        "Mix": 5,
+        "Reversed": true,
+        "Deflection": 10.0
+      }
+    },
+    {
+      "ID": 39,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 271.2862,
+        "y": 301.3915,
+        "z": 58.3599167
+      },
+      "LocalPosition": {
+        "x": 0.724405169,
+        "y": 0.403885067,
+        "z": -0.363370657
+      },
+      "Control": {
+        "Mix": 4,
+        "Deflection": 43.0
+      }
+    },
+    {
+      "ID": 40,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 271.286316,
+        "y": 58.60857,
+        "z": 301.64
+      },
+      "LocalPosition": {
+        "x": -0.724405169,
+        "y": 0.403885067,
+        "z": -0.363370657
+      },
+      "Control": {
+        "Mix": 4,
+        "Reversed": true,
+        "Deflection": 44.0
+      }
+    },
+    {
+      "ID": 43,
+      "SKU": "PART_PARAMETRIC_FIN_L",
+      "SymmetricPartID": 44,
+      "YawPitchRoll": {
+        "x": 9.999997,
+        "y": -1.37864E-05,
+        "z": 179.999924
+      },
+      "LocalPosition": {
+        "x": 0.308560729,
+        "y": 0.212317035,
+        "z": -1.24529684
+      },
+      "Control": {
+        "Mix": 3,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.1377551,
+        "RootChord": 0.482142866,
+        "TipChord": 0.4132653,
+        "WingSweep": 20.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 44,
+      "SKU": "PART_PARAMETRIC_FIN_R",
+      "SymmetricPartID": 43,
+      "YawPitchRoll": {
+        "x": 9.999997,
+        "y": 1.37864E-05,
+        "z": -179.999924
+      },
+      "LocalPosition": {
+        "x": -0.308560729,
+        "y": 0.212317035,
+        "z": -1.24529684
+      },
+      "Control": {
+        "Mix": 3,
+        "Reversed": true,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.1377551,
+        "RootChord": 0.482142866,
+        "TipChord": 0.4132653,
+        "WingSweep": 20.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 48,
+      "SKU": "PART_EDF105",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 0.0,
+        "y": 0.3294539,
+        "z": 0.187104359
+      }
+    },
+    {
+      "ID": 49,
+      "SKU": "PART_EDF105",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 0.0,
+        "y": 0.3294539,
+        "z": 0.187104359
+      }
+    },
+    {
+      "ID": 50,
+      "SKU": "PART_EDF105",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 0.0,
+        "y": 0.3294539,
+        "z": 0.187104359
+      }
+    },
+    {
+      "ID": 52,
+      "SKU": "PART_PARAWING_L",
+      "SymmetricPartID": 53,
+      "LocalPosition": {
+        "x": -0.40225774,
+        "y": 0.3761194,
+        "z": -0.477872074
+      },
+      "Control": {
+        "Mix": 5,
+        "Deflection": 16.0
+      },
+      "WingData": {
+        "AirfoilIndex": 1,
+        "HalfSpan": 1.49999988,
+        "RootChord": 0.688775539,
+        "TipChord": 0.306122422,
+        "WingSweep": 21.0,
+        "ControlSize": 0.2
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 40,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 21,
+        "Scale": 0.149999991,
+        "PosX": 0.884191453,
+        "PosY": 0.194510132,
+        "Rotation": 22.0
+      }
+    },
+    {
+      "ID": 53,
+      "SKU": "PART_PARAWING_R",
+      "SymmetricPartID": 52,
+      "LocalPosition": {
+        "x": 0.40225774,
+        "y": 0.3761194,
+        "z": -0.477872074
+      },
+      "Control": {
+        "Mix": 5,
+        "Reversed2": true,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 1,
+        "HalfSpan": 1.49999988,
+        "RootChord": 0.688775539,
+        "TipChord": 0.306122422,
+        "WingSweep": 21.0,
+        "ControlSize": 0.2
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 39,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 21,
+        "Scale": 0.149999991,
+        "PosX": 0.884191453,
+        "PosY": 0.194510132,
+        "Rotation": 22.0
+      }
+    },
+    {
+      "ID": 54,
+      "SKU": "PART_PARAWING_L",
+      "SymmetricPartID": 55,
+      "YawPitchRoll": {
+        "x": 359.938232,
+        "y": -1E-10,
+        "z": 1.999E-07
+      },
+      "LocalPosition": {
+        "x": -0.54999584,
+        "y": 0.419356436,
+        "z": -0.304559439
+      },
+      "Control": {
+        "Mix": 2,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.183673471,
+        "RootChord": 0.841836751,
+        "TipChord": 0.122448981,
+        "DihedralDegrees": 1.0,
+        "WingSweep": 65.0
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 55,
+      "SKU": "PART_PARAWING_R",
+      "SymmetricPartID": 54,
+      "YawPitchRoll": {
+        "x": 359.938232,
+        "y": 1E-10,
+        "z": -1.999E-07
+      },
+      "LocalPosition": {
+        "x": 0.54999584,
+        "y": 0.419356436,
+        "z": -0.304559439
+      },
+      "Control": {
+        "Mix": 2,
+        "Reversed": true,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.183673471,
+        "RootChord": 0.841836751,
+        "TipChord": 0.122448981,
+        "DihedralDegrees": 1.0,
+        "WingSweep": 65.0
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 56,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 57,
+      "LocalPosition": {
+        "x": -0.4050825,
+        "y": 0.3327501,
+        "z": -0.7828318
+      },
+      "FuseData": {
+        "Length": 0.6489796,
+        "Elevation": 0.00153061224,
+        "SideShear": 0.021428572,
+        "TopWidthFront": 0.183673471,
+        "TopRadiusFront": 0.299999982,
+        "HeightFront": 0.168367356,
+        "BottomRadiusFront": 0.599999964,
+        "BottomWidthFront": 0.183673471,
+        "TopWidthRear": 0.183673471,
+        "TopRadiusRear": 0.599999964,
+        "HeightRear": 0.146938771,
+        "BottomRadiusRear": 0.599999964,
+        "BottomWidthRear": 0.183673471
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 57,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 56,
+      "LocalPosition": {
+        "x": 0.4050825,
+        "y": 0.3327501,
+        "z": -0.7828318
+      },
+      "FuseData": {
+        "Length": 0.6489796,
+        "Elevation": 0.00153061224,
+        "SideShear": 0.021428572,
+        "TopWidthFront": 0.183673471,
+        "TopRadiusFront": 0.299999982,
+        "HeightFront": 0.168367356,
+        "BottomRadiusFront": 0.599999964,
+        "BottomWidthFront": 0.183673471,
+        "TopWidthRear": 0.183673471,
+        "TopRadiusRear": 0.599999964,
+        "HeightRear": 0.146938771,
+        "BottomRadiusRear": 0.599999964,
+        "BottomWidthRear": 0.183673471
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 60,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 61,
+      "YawPitchRoll": {
+        "x": 3.1283E-06,
+        "y": -6.5826E-06,
+        "z": -349.999969
+      },
+      "LocalPosition": {
+        "x": 0.291307,
+        "y": 0.280449033,
+        "z": -1.656687
+      },
+      "FuseData": {
+        "Length": 0.00765306177,
+        "TopWidthFront": 0.1377551,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.1377551,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.1377551,
+        "TopWidthRear": 0.09241302,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.0918367356,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.0918367356
+      },
+      "Color": {
+        "r": 10.0,
+        "g": 0.9411765,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 61,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 60,
+      "YawPitchRoll": {
+        "x": 3.1283E-06,
+        "y": 6.5826E-06,
+        "z": 349.999969
+      },
+      "LocalPosition": {
+        "x": -0.291307,
+        "y": 0.280449033,
+        "z": -1.656687
+      },
+      "FuseData": {
+        "Length": 0.00765306177,
+        "TopWidthFront": 0.1377551,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.1377551,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.1377551,
+        "TopWidthRear": 0.09241302,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.0918367356,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.0918367356
+      },
+      "Color": {
+        "r": 10.0,
+        "g": 0.9411765,
+        "b": 0.0,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 62,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 63,
+      "YawPitchRoll": {
+        "x": 7.649E-07,
+        "y": -3.4951E-06,
+        "z": -10.0000429
+      },
+      "LocalPosition": {
+        "x": -0.2913069,
+        "y": 0.280449033,
+        "z": -1.56638122
+      },
+      "FuseData": {
+        "Length": 0.0887755156,
+        "TopWidthFront": 0.260204077,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.260204077,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.260204077,
+        "TopWidthRear": 0.254081637,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.254081637,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.254081637
+      },
+      "Material": 2,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 50,
+        "Scale": 3.44476247,
+        "PosX": -0.165490791,
+        "PosY": -0.0580000021,
+        "Rotation": 90.0
+      }
+    },
+    {
+      "ID": 63,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 62,
+      "YawPitchRoll": {
+        "x": 7.649E-07,
+        "y": 3.4951E-06,
+        "z": 10.0000429
+      },
+      "LocalPosition": {
+        "x": 0.2913069,
+        "y": 0.280449033,
+        "z": -1.56638122
+      },
+      "FuseData": {
+        "Length": 0.0887755156,
+        "TopWidthFront": 0.260204077,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.260204077,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.260204077,
+        "TopWidthRear": 0.254081637,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.254081637,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.254081637
+      },
+      "Material": 2,
+      "DecalData": {
+        "Enabled": true,
+        "Index": 50,
+        "Scale": 3.44476247,
+        "PosX": -0.165490791,
+        "PosY": -0.0580000021,
+        "Rotation": 90.0
+      }
+    },
+    {
+      "ID": 64,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 298.142822,
+        "y": 2.98161E-05,
+        "z": -9.8954E-06
+      },
+      "LocalPosition": {
+        "x": -2E-09,
+        "y": 0.514734745,
+        "z": 1.04301441
+      },
+      "FuseData": {
+        "Length": 0.00153061224,
+        "Elevation": -0.00306122447,
+        "Hollow": true,
+        "TopWidthFront": 0.0336734727,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.1377551,
+        "BottomRadiusFront": 0.25,
+        "BottomWidthFront": 0.03979592,
+        "TopWidthRear": 0.05816327,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.171428576,
+        "BottomRadiusRear": 0.25,
+        "BottomWidthRear": 0.06428572
+      },
+      "Color": {
+        "r": 0.01,
+        "g": 0.01,
+        "b": 0.01,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 65,
+      "SKU": "PART_PARAWING_L",
+      "SymmetricPartID": 66,
+      "LocalPosition": {
+        "x": -1.90225768,
+        "y": 0.3761194,
+        "z": -0.926118433
+      },
+      "Control": {
+        "Mix": 5,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 1,
+        "HalfSpan": 0.0918367356,
+        "RootChord": 0.306122422,
+        "TipChord": 0.107142858,
+        "WingSweep": 66.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 40
+    },
+    {
+      "ID": 66,
+      "SKU": "PART_PARAWING_R",
+      "SymmetricPartID": 65,
+      "LocalPosition": {
+        "x": 1.90225768,
+        "y": 0.3761194,
+        "z": -0.926118433
+      },
+      "Control": {
+        "Mix": 5,
+        "Reversed2": true,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 1,
+        "HalfSpan": 0.0918367356,
+        "RootChord": 0.306122422,
+        "TipChord": 0.107142858,
+        "WingSweep": 66.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 39
+    },
+    {
+      "ID": 67,
+      "SKU": "PART_PARAHORSTAB_L",
+      "SymmetricPartID": 68,
+      "LocalPosition": {
+        "x": -1.01473594,
+        "y": 0.2995178,
+        "z": -1.78309619
+      },
+      "Control": {
+        "Mix": 1,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.0306122452,
+        "RootChord": 0.1377551,
+        "TipChord": 0.0459183678,
+        "Incidence": -4.0,
+        "DihedralDegrees": -3.0,
+        "WingSweep": 62.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 36
+    },
+    {
+      "ID": 68,
+      "SKU": "PART_PARAHORSTAB_R",
+      "SymmetricPartID": 67,
+      "LocalPosition": {
+        "x": 1.01473594,
+        "y": 0.2995178,
+        "z": -1.78309619
+      },
+      "Control": {
+        "Mix": 1,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.0306122452,
+        "RootChord": 0.1377551,
+        "TipChord": 0.0459183678,
+        "Incidence": -4.0,
+        "DihedralDegrees": -3.0,
+        "WingSweep": 62.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 37
+    },
+    {
+      "ID": 69,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 70,
+      "LocalPosition": {
+        "x": 0.38365382,
+        "y": 0.3342807,
+        "z": -1.43181121
+      },
+      "FuseData": {
+        "Length": 0.134693891,
+        "Elevation": -0.00306122447,
+        "SideShear": 0.0704081655,
+        "TopWidthFront": 0.183673471,
+        "TopRadiusFront": 0.599999964,
+        "HeightFront": 0.146938771,
+        "BottomRadiusFront": 0.599999964,
+        "BottomWidthFront": 0.183673471,
+        "TopWidthRear": 0.183673471,
+        "TopRadiusRear": 1.0,
+        "HeightRear": 0.146938771,
+        "BottomRadiusRear": 0.599999964,
+        "BottomWidthRear": 0.183673471
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 70,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 69,
+      "LocalPosition": {
+        "x": -0.38365382,
+        "y": 0.3342807,
+        "z": -1.43181121
+      },
+      "FuseData": {
+        "Length": 0.134693891,
+        "Elevation": -0.00306122447,
+        "SideShear": 0.0704081655,
+        "TopWidthFront": 0.183673471,
+        "TopRadiusFront": 0.599999964,
+        "HeightFront": 0.146938771,
+        "BottomRadiusFront": 0.599999964,
+        "BottomWidthFront": 0.183673471,
+        "TopWidthRear": 0.183673471,
+        "TopRadiusRear": 1.0,
+        "HeightRear": 0.146938771,
+        "BottomRadiusRear": 0.599999964,
+        "BottomWidthRear": 0.183673471
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 71,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 72,
+      "LocalPosition": {
+        "x": -0.365286529,
+        "y": 0.378668427,
+        "z": -0.0144644221
+      },
+      "FuseData": {
+        "Length": 0.7683674,
+        "Elevation": -0.0459183678,
+        "SideShear": -0.03979592,
+        "TopWidthFront": 0.009183673,
+        "TopRadiusFront": 0.599999964,
+        "HeightFront": 0.08571429,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0367346928,
+        "TopWidthRear": 0.183673471,
+        "TopRadiusRear": 0.299999982,
+        "HeightRear": 0.168367356,
+        "BottomRadiusRear": 0.599999964,
+        "BottomWidthRear": 0.183673471
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 72,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 71,
+      "LocalPosition": {
+        "x": 0.365286529,
+        "y": 0.378668427,
+        "z": -0.0144644221
+      },
+      "FuseData": {
+        "Length": 0.7683674,
+        "Elevation": -0.0459183678,
+        "SideShear": -0.03979592,
+        "TopWidthFront": 0.009183673,
+        "TopRadiusFront": 0.599999964,
+        "HeightFront": 0.08571429,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0367346928,
+        "TopWidthRear": 0.183673471,
+        "TopRadiusRear": 0.299999982,
+        "HeightRear": 0.168367356,
+        "BottomRadiusRear": 0.599999964,
+        "BottomWidthRear": 0.183673471
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 73,
+      "SKU": "PART_WHEEL",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -0.027897289,
+        "y": 0.0169708338,
+        "z": 0.6756798
+      },
+      "Color": {
+        "r": 0.784313738,
+        "g": 0.784313738,
+        "b": 0.784313738,
+        "a": 1.0
+      },
+      "Servo": 80,
+      "Scale": 1.62244892
+    },
+    {
+      "ID": 75,
+      "SKU": "PART_WHEEL",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 0.027897289,
+        "y": 0.0169708338,
+        "z": 0.6756798
+      },
+      "Color": {
+        "r": 0.784313738,
+        "g": 0.784313738,
+        "b": 0.784313738,
+        "a": 1.0
+      },
+      "Servo": 80,
+      "Scale": 1.62244892
+    },
+    {
+      "ID": 76,
+      "SKU": "PART_WHEEL",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": -3.3141E-06,
+        "y": 5.17E-08,
+        "z": 358.212219
+      },
+      "LocalPosition": {
+        "x": -0.5039313,
+        "y": 0.0157204084,
+        "z": -0.7097131
+      },
+      "Color": {
+        "r": 0.784313738,
+        "g": 0.784313738,
+        "b": 0.784313738,
+        "a": 1.0
+      },
+      "Servo": 87,
+      "Scale": 2.81632638
+    },
+    {
+      "ID": 77,
+      "SKU": "PART_WHEEL",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": -3.3141E-06,
+        "y": -5.17E-08,
+        "z": 1.78777838
+      },
+      "LocalPosition": {
+        "x": 0.5039313,
+        "y": 0.0157204084,
+        "z": -0.7097131
+      },
+      "Color": {
+        "r": 0.784313738,
+        "g": 0.784313738,
+        "b": 0.784313738,
+        "a": 1.0
+      },
+      "Servo": 86,
+      "Scale": 2.81632638
+    },
+    {
+      "ID": 78,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 79,
+      "YawPitchRoll": {
+        "x": 9.555E-07,
+        "y": -8.36E-08,
+        "z": 349.999969
+      },
+      "LocalPosition": {
+        "x": -0.287585974,
+        "y": 0.301552,
+        "z": -0.01243871
+      },
+      "FuseData": {
+        "Length": 0.00153061224,
+        "TopWidthFront": 0.205102041,
+        "TopRadiusFront": 0.01,
+        "HeightFront": 0.215816334,
+        "BottomRadiusFront": 0.08,
+        "BottomWidthFront": 0.195918366,
+        "TopWidthRear": 0.197449,
+        "TopRadiusRear": 0.01,
+        "HeightRear": 0.212755129,
+        "BottomRadiusRear": 0.08,
+        "BottomWidthRear": 0.191326529
+      },
+      "Material": 2
+    },
+    {
+      "ID": 79,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 78,
+      "YawPitchRoll": {
+        "x": 9.555E-07,
+        "y": 8.36E-08,
+        "z": -349.999969
+      },
+      "LocalPosition": {
+        "x": 0.287585974,
+        "y": 0.301552,
+        "z": -0.01243871
+      },
+      "FuseData": {
+        "Length": 0.00153061224,
+        "TopWidthFront": 0.205102041,
+        "TopRadiusFront": 0.01,
+        "HeightFront": 0.215816334,
+        "BottomRadiusFront": 0.08,
+        "BottomWidthFront": 0.195918366,
+        "TopWidthRear": 0.197449,
+        "TopRadiusRear": 0.01,
+        "HeightRear": 0.212755129,
+        "BottomRadiusRear": 0.08,
+        "BottomWidthRear": 0.191326529
+      },
+      "Material": 2
+    },
+    {
+      "ID": 80,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 270.0,
+        "y": 1.04354E-05,
+        "z": 0.0
+      },
+      "LocalPosition": {
+        "x": 2.1E-09,
+        "y": -0.0053378474,
+        "z": 0.6764691
+      },
+      "Control": {
+        "Mix": 3,
+        "Deflection": 50.0
+      },
+      "Servo": 82
+    },
+    {
+      "ID": 81,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -1.358E-07,
+        "y": 0.306548357,
+        "z": -1.71392012
+      },
+      "FuseData": {
+        "Length": 0.2755102,
+        "Elevation": -0.0260204077,
+        "TopWidthFront": 0.140816346,
+        "TopRadiusFront": 0.01,
+        "HeightFront": 0.0183673464,
+        "BottomRadiusFront": 0.01,
+        "BottomWidthFront": 0.140816346,
+        "TopWidthRear": 0.107142858,
+        "TopRadiusRear": 0.199999988,
+        "HeightRear": 0.0183673464,
+        "BottomRadiusRear": 0.04,
+        "BottomWidthRear": 0.107142858
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 82,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 0.0,
+        "y": 269.999939,
+        "z": 0.0
+      },
+      "LocalPosition": {
+        "x": 0.0,
+        "y": 0.3167893,
+        "z": 0.679935
+      },
+      "Control": {
+        "Mix": 8,
+        "Deflection": 90.0
+      }
+    },
+    {
+      "ID": 83,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 0.0,
+        "y": 269.999939,
+        "z": 0.0
+      },
+      "LocalPosition": {
+        "x": 2.042E-07,
+        "y": 0.337061673,
+        "z": -0.74309665
+      },
+      "Control": {
+        "Mix": 8,
+        "Deflection": 90.0
+      }
+    },
+    {
+      "ID": 86,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 90.0,
+        "y": -2.41483E-05,
+        "z": 0.0
+      },
+      "LocalPosition": {
+        "x": 0.461030662,
+        "y": 0.04435413,
+        "z": -0.709489644
+      },
+      "Control": {
+        "Mix": 8,
+        "Deflection": 90.0
+      },
+      "Servo": 83
+    },
+    {
+      "ID": 87,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 90.0,
+        "y": 2.41483E-05,
+        "z": 0.0
+      },
+      "LocalPosition": {
+        "x": -0.461030662,
+        "y": 0.04435413,
+        "z": -0.709489644
+      },
+      "Control": {
+        "Mix": 8,
+        "Reversed": true,
+        "Deflection": 90.0
+      },
+      "Servo": 83
+    },
+    {
+      "ID": 89,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 10.0000057,
+        "y": 7.013E-06,
+        "z": 1.7913E-06
+      },
+      "LocalPosition": {
+        "x": 4.105E-07,
+        "y": 0.161040947,
+        "z": 1.2653
+      },
+      "FuseData": {
+        "Length": 0.134693891,
+        "TopWidthFront": 0.04897959,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.04897959,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.04897959,
+        "TopWidthRear": 0.0612244941,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.0612244941,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.0612244941
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 90,
+      "SKU": "PART_PARAHORSTAB_L",
+      "SymmetricPartID": 91,
+      "LocalPosition": {
+        "x": -0.433103323,
+        "y": 0.329999834,
+        "z": -1.22231209
+      },
+      "Control": {
+        "Mix": 1,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.06122449,
+        "RootChord": 0.688775539,
+        "TipChord": 0.811224461,
+        "Incidence": -4.0,
+        "DihedralDegrees": -3.0,
+        "WingSweep": 52.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 36
+    },
+    {
+      "ID": 91,
+      "SKU": "PART_PARAHORSTAB_R",
+      "SymmetricPartID": 90,
+      "LocalPosition": {
+        "x": 0.433103323,
+        "y": 0.329999834,
+        "z": -1.22231209
+      },
+      "Control": {
+        "Mix": 1,
+        "Deflection": 20.0
+      },
+      "WingData": {
+        "AirfoilIndex": 4,
+        "HalfSpan": 0.06122449,
+        "RootChord": 0.688775539,
+        "TipChord": 0.811224461,
+        "Incidence": -4.0,
+        "DihedralDegrees": -3.0,
+        "WingSweep": 52.0
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 37
+    },
+    {
+      "ID": 92,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 89.36728,
+        "y": 180.000229,
+        "z": 180.0002
+      },
+      "LocalPosition": {
+        "x": 2.4E-09,
+        "y": 0.0130897118,
+        "z": 0.676880062
+      },
+      "FuseData": {
+        "Length": 0.205102041,
+        "TopWidthFront": 0.0229591839,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.0229591839,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0229591839,
+        "TopWidthRear": 0.0244897958,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.0244897958,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.0244897958
+      },
+      "Material": 3,
+      "Servo": 82
+    },
+    {
+      "ID": 93,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 94,
+      "YawPitchRoll": {
+        "x": 88.83316,
+        "y": 227.564713,
+        "z": 227.584625
+      },
+      "LocalPosition": {
+        "x": -0.470342517,
+        "y": 0.00576766627,
+        "z": -0.7095579
+      },
+      "FuseData": {
+        "Length": 0.290816337,
+        "TopWidthFront": 0.0306122471,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.0306122471,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0306122471,
+        "TopWidthRear": 0.0336734727,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.0336734727,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.0336734727
+      },
+      "Material": 3,
+      "Servo": 83
+    },
+    {
+      "ID": 94,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 93,
+      "YawPitchRoll": {
+        "x": 88.83316,
+        "y": -227.564713,
+        "z": -227.584625
+      },
+      "LocalPosition": {
+        "x": 0.470342517,
+        "y": 0.00576766627,
+        "z": -0.7095579
+      },
+      "FuseData": {
+        "Length": 0.290816337,
+        "TopWidthFront": 0.0306122471,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.0306122471,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0306122471,
+        "TopWidthRear": 0.0336734727,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.0336734727,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.0336734727
+      },
+      "Material": 3,
+      "Servo": 83
+    },
+    {
+      "ID": 97,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 0.0,
+        "y": 0.04579993,
+        "z": 0.841946661
+      },
+      "FuseData": {
+        "Length": 0.183673471,
+        "Elevation": 0.0459183678,
+        "TopWidthFront": 0.0244897958,
+        "TopRadiusFront": 0.16,
+        "HeightFront": 0.009183673,
+        "BottomRadiusFront": 0.299999982,
+        "BottomWidthFront": 0.0244897958,
+        "TopWidthRear": 0.0306122471,
+        "TopRadiusRear": 0.399999976,
+        "HeightRear": 0.021428572,
+        "BottomRadiusRear": 0.5,
+        "BottomWidthRear": 0.0306122471
+      },
+      "Color": {
+        "r": 0.831372559,
+        "g": 0.9019608,
+        "b": 0.8901961,
+        "a": 1.0
+      },
+      "Matte": true,
+      "Servo": 80
+    },
+    {
+      "ID": 98,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": -1.801E-07,
+        "y": 0.2863759,
+        "z": -1.62081242
+      },
+      "FuseData": {
+        "Length": 0.240306124,
+        "TopWidthFront": 0.3459184,
+        "TopRadiusFront": 0.099999994,
+        "HeightFront": 0.08571429,
+        "BottomRadiusFront": 0.04,
+        "BottomWidthFront": 0.3459184,
+        "TopWidthRear": 0.269387782,
+        "TopRadiusRear": 0.099999994,
+        "HeightRear": 0.0183673464,
+        "BottomRadiusRear": 0.04,
+        "BottomWidthRear": 0.269387782
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 99,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 10.0000067,
+        "y": 3.5841E-06,
+        "z": 1.7827E-06
+      },
+      "LocalPosition": {
+        "x": 4.105E-07,
+        "y": 0.1844303,
+        "z": 1.13265264
+      },
+      "FuseData": {
+        "Length": 0.0734693855,
+        "Elevation": 0.0275510214,
+        "TopWidthFront": 0.0612244941,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.0612244941,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0612244941,
+        "TopWidthRear": 0.0612244941,
+        "TopRadiusRear": 0.01,
+        "HeightRear": 0.0612244941,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.0612244941
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 100,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 10.0000057,
+        "y": 3.5808E-06,
+        "z": 1.7449E-06
+      },
+      "LocalPosition": {
+        "x": 3.653E-07,
+        "y": 0.1577641,
+        "z": 1.29269814
+      },
+      "FuseData": {
+        "Length": 0.0275510214,
+        "Elevation": -0.00153061224,
+        "TopWidthFront": 0.0336734727,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.0336734727,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0336734727,
+        "TopWidthRear": 0.04897959,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.04897959,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.04897959
+      },
+      "Color": {
+        "r": 0.5411765,
+        "g": 0.572549045,
+        "b": 0.5529412,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 101,
+      "SKU": "PART_PARAFUSE",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": 30.6319332,
+        "y": 1.49442E-05,
+        "z": -1.00779E-05
+      },
+      "LocalPosition": {
+        "x": 1.2E-07,
+        "y": 0.115045384,
+        "z": 0.673156857
+      },
+      "FuseData": {
+        "Length": 0.214285716,
+        "TopWidthFront": 0.0183673464,
+        "TopRadiusFront": 0.399999976,
+        "HeightFront": 0.0183673464,
+        "BottomRadiusFront": 0.399999976,
+        "BottomWidthFront": 0.0183673464,
+        "TopWidthRear": 0.021428572,
+        "TopRadiusRear": 0.399999976,
+        "HeightRear": 0.021428572,
+        "BottomRadiusRear": 0.399999976,
+        "BottomWidthRear": 0.021428572
+      },
+      "Material": 3,
+      "Servo": 104
+    },
+    {
+      "ID": 102,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 103,
+      "YawPitchRoll": {
+        "x": 40.3394051,
+        "y": 189.880173,
+        "z": 187.111588
+      },
+      "LocalPosition": {
+        "x": -0.466059119,
+        "y": 0.125086948,
+        "z": -0.7010049
+      },
+      "FuseData": {
+        "Length": 0.281632662,
+        "TopWidthFront": 0.021428572,
+        "TopRadiusFront": 0.399999976,
+        "HeightFront": 0.01989796,
+        "BottomRadiusFront": 0.399999976,
+        "BottomWidthFront": 0.021428572,
+        "TopWidthRear": 0.0275510214,
+        "TopRadiusRear": 0.399999976,
+        "HeightRear": 0.0244897958,
+        "BottomRadiusRear": 0.399999976,
+        "BottomWidthRear": 0.0275510214
+      },
+      "Material": 3,
+      "Servo": 107
+    },
+    {
+      "ID": 103,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 102,
+      "YawPitchRoll": {
+        "x": 40.3394051,
+        "y": -189.880173,
+        "z": -187.111588
+      },
+      "LocalPosition": {
+        "x": 0.466059119,
+        "y": 0.125086948,
+        "z": -0.7010049
+      },
+      "FuseData": {
+        "Length": 0.281632662,
+        "TopWidthFront": 0.021428572,
+        "TopRadiusFront": 0.399999976,
+        "HeightFront": 0.01989796,
+        "BottomRadiusFront": 0.399999976,
+        "BottomWidthFront": 0.021428572,
+        "TopWidthRear": 0.0275510214,
+        "TopRadiusRear": 0.399999976,
+        "HeightRear": 0.0244897958,
+        "BottomRadiusRear": 0.399999976,
+        "BottomWidthRear": 0.0275510214
+      },
+      "Material": 3,
+      "Servo": 107
+    },
+    {
+      "ID": 104,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": -2.4546E-06,
+        "y": 90.00005,
+        "z": 1.71581531
+      },
+      "LocalPosition": {
+        "x": -6.53E-08,
+        "y": 0.8064938,
+        "z": -0.434418648
+      },
+      "Control": {
+        "Mix": 8,
+        "Reversed": true,
+        "Deflection": 18.0
+      }
+    },
+    {
+      "ID": 107,
+      "SKU": "PART_SERVO",
+      "SymmetricPartID": -1,
+      "YawPitchRoll": {
+        "x": -2.4012E-06,
+        "y": 269.999939,
+        "z": 358.28418
+      },
+      "LocalPosition": {
+        "x": -2.368E-07,
+        "y": -0.191441476,
+        "z": -0.1061146
+      },
+      "Control": {
+        "Mix": 8,
+        "Reversed": true,
+        "Deflection": 40.0
+      }
+    },
+    {
+      "ID": 108,
+      "SKU": "PART_EDF105",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 0.0,
+        "y": 0.3294539,
+        "z": 0.187088132
+      }
+    },
+    {
+      "ID": 109,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 110,
+      "YawPitchRoll": {
+        "x": 354.7524,
+        "y": 4.132E-07,
+        "z": -9.0162E-06
+      },
+      "LocalPosition": {
+        "x": -0.3071571,
+        "y": 0.124256194,
+        "z": -0.1227024
+      },
+      "FuseData": {
+        "Length": 0.4744898,
+        "TopWidthFront": 0.107142858,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.107142858,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.107142858,
+        "TopWidthRear": 0.107142858,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.107142858,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.107142858
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 110,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 109,
+      "YawPitchRoll": {
+        "x": 354.7524,
+        "y": -4.132E-07,
+        "z": 9.0162E-06
+      },
+      "LocalPosition": {
+        "x": 0.3071571,
+        "y": 0.124256194,
+        "z": -0.1227024
+      },
+      "FuseData": {
+        "Length": 0.4744898,
+        "TopWidthFront": 0.107142858,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.107142858,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.107142858,
+        "TopWidthRear": 0.107142858,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.107142858,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.107142858
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 111,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 112,
+      "YawPitchRoll": {
+        "x": 354.7524,
+        "y": 4.132E-07,
+        "z": -9.0162E-06
+      },
+      "LocalPosition": {
+        "x": -0.307157278,
+        "y": 0.132655576,
+        "z": -0.0312505625
+      },
+      "FuseData": {
+        "Length": 0.0918367356,
+        "TopWidthFront": 0.0183673464,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.0183673464,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0183673464,
+        "TopWidthRear": 0.107142858,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.107142858,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.107142858
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 112,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 111,
+      "YawPitchRoll": {
+        "x": 354.7524,
+        "y": -4.132E-07,
+        "z": 9.0162E-06
+      },
+      "LocalPosition": {
+        "x": 0.307157278,
+        "y": 0.132655576,
+        "z": -0.0312505625
+      },
+      "FuseData": {
+        "Length": 0.0918367356,
+        "TopWidthFront": 0.0183673464,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.0183673464,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.0183673464,
+        "TopWidthRear": 0.107142858,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.107142858,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.107142858
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 113,
+      "SKU": "PART_PARAFUSE_L",
+      "SymmetricPartID": 114,
+      "YawPitchRoll": {
+        "x": 354.7524,
+        "y": 4.132E-07,
+        "z": -9.0162E-06
+      },
+      "LocalPosition": {
+        "x": -0.307157218,
+        "y": 0.08085942,
+        "z": -0.595203757
+      },
+      "FuseData": {
+        "Length": 0.06489129,
+        "TopWidthFront": 0.107142858,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.107142858,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.107142858,
+        "TopWidthRear": 0.0459183678,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.0459183678,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.0459183678
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 114,
+      "SKU": "PART_PARAFUSE_R",
+      "SymmetricPartID": 113,
+      "YawPitchRoll": {
+        "x": 354.7524,
+        "y": -4.132E-07,
+        "z": 9.0162E-06
+      },
+      "LocalPosition": {
+        "x": 0.307157218,
+        "y": 0.08085942,
+        "z": -0.595203757
+      },
+      "FuseData": {
+        "Length": 0.06489129,
+        "TopWidthFront": 0.107142858,
+        "TopRadiusFront": 0.95,
+        "HeightFront": 0.107142858,
+        "BottomRadiusFront": 0.95,
+        "BottomWidthFront": 0.107142858,
+        "TopWidthRear": 0.0459183678,
+        "TopRadiusRear": 0.95,
+        "HeightRear": 0.0459183678,
+        "BottomRadiusRear": 0.95,
+        "BottomWidthRear": 0.0459183678
+      },
+      "Color": {
+        "r": 0.509803951,
+        "g": 0.5411765,
+        "b": 0.5176471,
+        "a": 1.0
+      },
+      "Matte": true
+    },
+    {
+      "ID": 115,
+      "SKU": "PART_EDF105",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 0.0,
+        "y": 0.3294539,
+        "z": 0.187104359
+      }
+    },
+    {
+      "ID": 116,
+      "SKU": "PART_EDF105",
+      "SymmetricPartID": -1,
+      "LocalPosition": {
+        "x": 0.0,
+        "y": 0.3294539,
+        "z": 0.187088132
+      }
+    }
+  ]
+}
